@@ -21,7 +21,7 @@ jobs:
       name: Load available actions
       id: load-actions
       with: 
-        PAT: ${{ secrets.GITHUB_TOKEN }}
+        PAT: ${{ secrets.PAT }}
         user: ${{ github.repository_owner }}
          
     # todo: convert this part into an action to make it more transferable. Don't forget to update the readme then!
@@ -49,7 +49,7 @@ jobs:
       #uses: LasyIsLazy/github-upload-action@v0.1.0
       uses: rajbos-actions/github-upload-action@v0.2.0
       with:
-        access-token: ${{ secrets.GITHUB_TOKEN }}
+        access-token: ${{ secrets.PAT }}
         file-path: actions-data.json
         owner: ${{ github.repository_owner }}
         repo: actions-marketplace # ${{ github.repository }} doesn't work with this action :-(, it'll fail over the slash and owner name
